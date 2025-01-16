@@ -1377,7 +1377,7 @@ def register(bl_info):
     # https://github.com/Fast-64/fast64
     updater.engine = "Github"
     updater.user = "TheNistalgiaProject"
-    updater.repo = "fast64"
+    updater.repo = "fast64-nistalgia"
 
     # updater.addon = # define at top of module, MUST be done first
 
