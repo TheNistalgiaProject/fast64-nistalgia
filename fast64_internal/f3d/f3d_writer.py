@@ -20,10 +20,6 @@ from .f3d_bleed import BleedGraphics
 
 from ..utility import *
 
-if isUcodeF3DEX3:
-    LightDirection = 0x49
-else LightDirection = 0x28
-
 def getColorLayer(mesh: bpy.types.Mesh, layer="Col"):
     if layer in mesh.attributes and getattr(mesh.attributes[layer], "data", None):
         return mesh.attributes[layer].data
@@ -1529,7 +1525,7 @@ def getLightDefinitions(fModel, material, lightsName=""):
 
     if material.use_default_lighting:
         lights.a = Ambient(exportColor(material.ambient_light_color))
-        lights.l.append(Light(exportColor(material.default_light_color), [LightDirection, LightDirection, LightDirection]))
+        lights.l.append(Light(exportColor(material.default_light_color), [0x28, 0x28, 0x28]))
     else:
         lights.a = Ambient(exportColor(material.ambient_light_color))
 

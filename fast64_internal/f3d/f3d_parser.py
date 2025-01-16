@@ -21,10 +21,6 @@ from .f3d_material_helpers import F3DMaterial_UpdateLock
 if TYPE_CHECKING:
     from .f3d_material import RDPSettings
 
-if isUcodeF3DEX3:
-    LightDirection = 0x49
-else LightDirection = 0x28
-
 colorCombinationCommands = [
     0x03,  # load lighting data
     0xB6,  # clear geometry params
@@ -521,13 +517,13 @@ class F3DContext:
 
         # Here these are ints, but when parsing the values will be normalized.
         self.lights.l = [
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
         ]
         self.lights.a = Ambient([0, 0, 0])
         self.numLights: int = 0
@@ -590,13 +586,13 @@ class F3DContext:
 
         self.lights = Lights("lights_context", self.f3d)
         self.lights.l = [
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
-            Light([0, 0, 0], [LightDirection, LightDirection, LightDirection]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
+            Light([0, 0, 0], [0x28, 0x28, 0x28]),
         ]
         self.lights.a = Ambient([0, 0, 0])
         self.numLights = 0
@@ -1288,7 +1284,7 @@ class F3DContext:
             lightList.append(Light(color, direction))
 
         while len(lightList) < 7:
-            lightList.append(Light(Vector([0, 0, 0]), Vector([LightDirection, LightDirection, LightDirection])))
+            lightList.append(Light(Vector([0, 0, 0]), Vector([0x28, 0x28, 0x28])))
 
         # normally a and l are Ambient and Light objects,
         # but here they will be a color and blender light object array.
