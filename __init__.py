@@ -58,7 +58,7 @@ from .fast64_internal.render_settings import (
 
 # info about add on
 bl_info = {
-    "name": "Fast64",
+    "name": "Fast64 PC",
     "version": (2, 3, 0),
     "author": "kurethedead",
     "location": "3DView",
