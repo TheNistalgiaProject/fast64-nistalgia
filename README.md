@@ -1,4 +1,4 @@
-# Fast64
+# Fast64 PC-PORT
 
 This requires Blender 3.2+. Blender 4.0+ is recommended.
 
@@ -39,9 +39,6 @@ Any exported mesh must use an F3D Material, which can be added by the 'Create F3
 ### Vertex Colors
 To use vertex colors, select a vertex colored texture preset and add two vertex color layers to your mesh named 'Col' and 'Alpha'. The alpha layer will use the greyscale value of the vertex color to determine alpha.
 
-### Large Texture Mode
-In F3D material properties, you can enable "Large Texture Mode". This will let you use textures up to 1024x1024 as long as each triangle in the mesh has UVs that can fit within a single tile load. Fast64 will categorize triangles into shared tile loads and load the portion of the texture when necessary.
-
 ### Decomp vs Homebrew Compatibility
 There may occur cases where code is formatted differently based on the code use case. In the tools panel under the Fast64 File Settings subheader, you can toggle homebrew compatibility.
 
@@ -62,6 +59,8 @@ Selecting F3DEX3 as your microcode unlocks a large number of additional presets 
 - `Lerp` vs. `Mult` for multitexture (water): Whether the two textures are combined by linear interpolation or multiplication.
 
 For cel shading, it is recommended to start with one of the cel shading presets, then modify the settings under the `Use Cel Shading` panel. Hover over each UI control for additional information about how that setting works.
+
+F3DEX3 Can be "imported" to the pc-port but most additions can just be a opengl function
 
 ### Updater
 
